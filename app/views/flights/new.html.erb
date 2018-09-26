@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+  <title>Overview | SlakHub</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Open+Sans" rel="stylesheet">
+  <%= stylesheet_link_tag "dashboard_overview" %>
+</head>
+
+<body>
+<div style="width: 100%; display: table;">
+  <div style="display: table-row;">
+    <div style="display: table-cell">
+      <!-- A vertical navbar -->
+      <ul class="nav flex-column" style="max-width: 64px; height: 100vh; position: fixed; background-color: #F4F5F7; max-height: none !important; align-items: center;">
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard/overview/" style="margin-top: 5px;">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" height="45" width="45">
+              <style type="text/css">
+                .st0{fill:none;}
+                .st1{fill:url(#SVGID_1_);}
+                .st2{fill:url(#SVGID_2_);}
+                .st3{fill:url(#SVGID_3_);}
+                .st4{fill:url(#SVGID_4_);}
+              </style>
+              <path class="st0" d="M210.4,280.3l70.3,20.6l20.9-70.9c-19.4-5.6-42.6-12.3-70.4-20.4L210.4,280.3z"/>
+              <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="116.432" y1="143.7627" x2="434.9685" y2="235.1015">
+                <stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.2"/>
+                <stop  offset="0.2198" style="stop-color:#F4F8FF;stop-opacity:0.3758"/>
+                <stop  offset="0.6616" style="stop-color:#E4EEFF;stop-opacity:0.7293"/>
+                <stop  offset="1" style="stop-color:#DEEBFF"/>
+              </linearGradient>
+              <path class="st1" d="M186.7,130.8l-17.9,60.8c-11.3-3.3-23.2-6.7-35.6-10.3c-3.5-1-6.8-2.6-9.8-4.7c-11.5-7.9-16.4-21.4-12.5-34.5
+	c0.1-0.5,0.3-1,0.5-1.5c5.6-16.3,23.1-25.2,39.8-20.3L186.7,130.8z M426.8,203.6c-2.7-1.8-5.6-3.3-8.7-4.4l-36.6-10.8L319.2,170
+	L249,149.2l-17.8,60.4c27.8,8,51,14.8,70.4,20.4c28,8.1,48.1,13.9,62.4,18.1c35,10.1,35.7,10.4,35.7,10.4
+	c14.9,4.4,33.8-1.2,39.6-18.2l0.4-1.3C443.6,225.6,438.6,211.7,426.8,203.6z"/>
+              <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="234.6599" y1="78.9069" x2="145.1112" y2="391.2005">
+                <stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.2"/>
+                <stop  offset="0.2198" style="stop-color:#F4F8FF;stop-opacity:0.3758"/>
+                <stop  offset="0.6616" style="stop-color:#E4EEFF;stop-opacity:0.7293"/>
+                <stop  offset="1" style="stop-color:#DEEBFF"/>
+              </linearGradient>
+              <path class="st2" d="M130.2,323.1l62.4,18l-10.9,36.9c-5,17.2-23,27-40.2,22c0,0-0.1,0-0.1,0c-3.3-1-6.4-2.5-9.2-4.4l0,0l0,0
+	c-11.6-7.9-16.7-22.4-12.8-35.9L130.2,323.1z M231.2,209.6l17.8-60.4l10.6-36c4-13.5-1.2-28-12.8-35.9c-2.8-1.9-5.9-3.4-9.2-4.4
+	c0,0,0,0-0.1,0c-17.2-5-35.2,4.8-40.2,22l-10.6,35.9l-17.9,60.8l-20.7,70.5l62.3,18.2L231.2,209.6z"/>
+              <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="79.3909" y1="275.6432" x2="399.3672" y2="367.3949">
+                <stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.2"/>
+                <stop  offset="0.2198" style="stop-color:#F4F8FF;stop-opacity:0.3758"/>
+                <stop  offset="0.6616" style="stop-color:#E4EEFF;stop-opacity:0.7293"/>
+                <stop  offset="1" style="stop-color:#DEEBFF"/>
+              </linearGradient>
+              <path class="st3" d="M280.7,300.9l-17.8,60.6l-70.4-20.3l-62.4-18L95.3,313c-3.7-1.1-7.1-2.7-10.3-4.9l0,0
+	c-11.5-8-16.5-21.4-12.7-34.3c0.1-0.5,0.3-1,0.5-1.5c5.7-16.5,23.2-25.6,40-20.7l35.4,10.4l62.3,18.2L280.7,300.9z M364.3,390.8
+	c0,0,12.7,2.6,19.2-0.1c8.7-3.6,15.7-10.9,18.7-19.7l0.4-1.3c3.8-13.1-1.4-27.2-12.9-35.2c-2.9-2-6.1-3.5-9.6-4.6L343,319.2
+	l-17.8,60.4L364.3,390.8z"/>
+              <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="360.8" y1="410.7664" x2="283.0129" y2="139.4905">
+                <stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.2"/>
+                <stop  offset="0.2198" style="stop-color:#F4F8FF;stop-opacity:0.3758"/>
+                <stop  offset="0.6616" style="stop-color:#E4EEFF;stop-opacity:0.7293"/>
+                <stop  offset="1" style="stop-color:#DEEBFF"/>
+              </linearGradient>
+              <path class="st4" d="M381.5,188.4L319.2,170l10.6-36.1l0.5-1.5c5.7-16.4,23.2-25.4,39.8-20.5c3.3,1,6.5,2.5,9.3,4.4
+	c4.2,2.9,7.6,6.7,10.1,11.2c4.1,7.6,5.1,16.4,2.6,24.7L381.5,188.4z M301.6,230l-20.9,70.9l-17.8,60.6l-11,37.3
+	c-4,13.5,1.2,28,12.8,35.9l0,0c2.8,1.9,5.9,3.4,9.2,4.4c16.7,4.9,34.1-4.1,40-21.1l0.3-0.8l11.1-37.6l17.8-60.4l20.9-71.1
+	C349.6,243.9,329.6,238.1,301.6,230z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- main body -->
+    <div style="display: table-cell;">
+      <div style="margin: 0; padding: 0; margin-left: 9rem; margin-right: 5rem;">
+        <div class="container">
+
+          <div class="row justify-content-between" style="margin-top: 2rem">
+            <div class="col-md-8 col-xs-12">
+
+              <div class="card" style="width: 598px">
+                <div class="card-body">
+                  <h5 class="card-title" style="padding: 0 0 12px;position: relative;font-size: 1.5em;font-style: inherit;font-weight: 500;letter-spacing: -.01em;line-height: 1.16666667;color: #172B4D;">Create a Flight</h5>
+
+                  <section style="border-top: 1px solid #DFE1E6;">
+                  <form>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-3 col-form-label" style="text-align: right;">Email</label>
+                      <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" style="height: 32px;">
+                      </div>
+                    </div>
+
+                    <div class="dropdown">
+                      <label for="inputEmail3" class="col-sm-3 col-form-label" style="text-align: right;">Email</label>
+                      <form>
+                        <select class="col-sm-6" style="height: 32px">
+                          <option value="0">Settings</option>
+                          <option value="1">Permissions</option>
+                          <option value="2">Authentication</option>
+                          <option value="3">Workspace</option>
+                        </select>
+                      </form>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-3 col-form-label" style="text-align: right;">Password</label>
+                      <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                      </div>
+                    </div>
+                    <fieldset class="form-group">
+                      <div class="row">
+                        <legend class="col-form-label col-sm-4 pt-0">Radios</legend>
+                        <div class="col-sm-8">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                              First radio
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                              Second radio
+                            </label>
+                          </div>
+                          <div class="form-check disabled">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                            <label class="form-check-label" for="gridRadios3">
+                              Third disabled radio
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="form-group row">
+                      <div class="col-sm-2">Checkbox</div>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                          <label class="form-check-label" for="gridCheck1">
+                            Example checkbox
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div>
+                    </div>
+                  </form>
+                  </section>
+                </div>
+              </div>
+
+              <!--
+              t.string "board"
+              t.string "from_country"
+              t.string "from_city"
+              t.integer "seats"
+              t.integer "vacancies"
+              t.string "airline"
+              t.datetime "departure"
+              t.datetime "arrival"
+              t.boolean "transit", default: false, null: false
+              t.datetime "duration"
+              t.string "to_country"
+              t.string "to_city"
+              -->
+              <%= render 'form', flight: @flight %>
+              <%= link_to 'Back', flights_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+<style>
+  .body{
+    color: #172B4D;
+  }
+  #div{
+    display:block !important;
+  }
+
+  .a_hover:hover{
+    height: 40px;
+    width: 50px;
+    outline: none;
+    border-radius: 2px;
+    text-decoration: none;
+    background-color: #04387E !important;
+    padding: 10px 16px 13px 16px;
+
+    margin-right: 9px;
+    margin-left: 6px;
+
+    vertical-align: middle;
+  }
+
+  .a_hover:active{
+    height: 40px;
+    width: 50px;
+    outline: none;
+    border-radius: 2px;
+    text-decoration: none;
+
+    margin-right: 9px;
+    margin-left: 6px;
+    vertical-align: middle;
+    padding: 10px 16px 13px 16px;
+
+    background-color: #0447A6 !important;
+  }
+
+  .a_hover:focus{
+    height: 40px;
+    width: 50px;
+    outline: none;
+    border-radius: 2px;
+    text-decoration: none;
+
+    margin-right: 9px;
+    margin-left: 6px;
+    vertical-align: middle;
+    padding: 10px 16px 13px 16px;
+
+    background-color: #0447A6 !important;
+  }
+
+  .tooltip{
+    pointer-events: none;
+  }
+  .red-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#f00; }
+
+</style>
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    /*
+    // jQuery and Bootstrap loaded, you're here on a $(document).on('ready') scope !
+    $('#mySelect').on('change', function (e) {
+        // With $(this).val(), you can **(and have to!)** specify the target in your <option> values.
+        $('#myTab li a').eq($(this).val()).tab('show');
+        // If you do not care about the sorting, you can work with $(this).index().
+        // $('#the-tab li a').eq($(this).index()).tab('show');
+    });
+*/
+    $('select').selectpicker();
+</script>

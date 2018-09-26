@@ -1,0 +1,18 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.side_bar{
+
+}
+
+.second_sidebar{
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 220px;
+  display: flex;
+  background: #4d394b;
+  color: #fff !important;
+  flex-direction: column;
+  height: 100vh;
+}
