@@ -3,6 +3,11 @@
   <title>Overview | SlakHub</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Open+Sans" rel="stylesheet">
   <%= stylesheet_link_tag "dashboard_overview" %>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/i18n/defaults-*.min.js"></script>
 </head>
 
 <body>
@@ -72,107 +77,392 @@
     <!-- main body -->
     <div style="display: table-cell;">
       <div style="margin: 0; padding: 0; margin-left: 9rem; margin-right: 5rem;">
-        <div class="container">
 
-          <div class="row justify-content-between" style="margin-top: 2rem">
-            <div class="col-md-8 col-xs-12">
+        <div class="card" style="width: 598px; margin: 2.5rem auto;">
+          <div class="card-body">
+            <h5 class="card-title" style="position: relative; font-size: 1.4em; font-style: inherit; font-weight: 500; letter-spacing: -.01em; line-height: 1; color: #172B4D;">Create a Flight</h5>
 
-              <div class="card" style="width: 598px">
-                <div class="card-body">
-                  <h5 class="card-title" style="padding: 0 0 12px;position: relative;font-size: 1.5em;font-style: inherit;font-weight: 500;letter-spacing: -.01em;line-height: 1.16666667;color: #172B4D;">Create a Flight</h5>
+            <section style="border-top: 1px solid #DFE1E6;">
+              <form>
+                <!-- flight number -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="margin-left: 3rem; margin-right: 1rem">Flight number</label>
+                  </div>
+                  <div class="col-xs-6" style="margin: auto 0;">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="" style="height: 32px">
+                  </div>
+                </div>
 
-                  <section style="border-top: 1px solid #DFE1E6;">
-                  <form>
-                    <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-3 col-form-label" style="text-align: right;">Email</label>
-                      <div class="col-sm-6">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" style="height: 32px;">
+                <!-- transit -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="margin-left: 5.9rem; margin-right: 1rem">Internal</label>
+                  </div>
+                  <div class="col-xs-6" style="margin: auto 0;">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input type="checkbox" class="custom-control-input" id="internalFlight">
+                      <label class="custom-control-label" for="internalFlight">This is an internal flight</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- transit -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="margin-left: 6.2rem; margin-right: 1rem">Transit</label>
+                  </div>
+                  <div class="col-xs-6" style="margin: auto 0;">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input type="checkbox" class="custom-control-input" id="transitFlight">
+                      <label class="custom-control-label" for="transitFlight">This flight with transit</label>
+                    </div>
+                  </div>
+                </div>
+
+                <fieldset class="form-group">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <label class="col-form-label" style="margin-left: 6.6rem; margin-right: 1rem">Board</label>
+                    </div>
+
+                    <div class="col-xs-6" style="margin: auto 0;">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="gridRadios1">One way</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">Two way</label>
                       </div>
                     </div>
 
-                    <div class="dropdown">
-                      <label for="inputEmail3" class="col-sm-3 col-form-label" style="text-align: right;">Email</label>
-                      <form>
-                        <select class="col-sm-6" style="height: 32px">
-                          <option value="0">Settings</option>
-                          <option value="1">Permissions</option>
-                          <option value="2">Authentication</option>
-                          <option value="3">Workspace</option>
-                        </select>
-                      </form>
+                  </div>
+                </fieldset>
+              </form>
+            </section>
+
+
+
+            <!-- outboard flight --> <!-- outboard flight --> <!-- outboard flight --> <!-- outboard flight --> <!-- outboard flight --> <!-- outboard flight --> <!-- outboard flight -->
+
+            <section style="border-top: 1px solid #DFE1E6;">
+              <h5>Outboard Flight</h5>
+              <h6>First Flight</h6>
+
+              <div class="container">
+                <!-- Airline -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="color: #707070">Airline</label>
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="" style="height: 32px">
+                  </div>
+                </div>
+
+                <!-- Country -->
+                <div class="row">
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">From</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">To</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <!-- City -->
+                  <div class="row">
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">From</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
                     </div>
 
-                    <div class="form-group row">
-                      <label for="inputPassword3" class="col-sm-3 col-form-label" style="text-align: right;">Password</label>
-                      <div class="col-sm-6">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                      </div>
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">To</label>
                     </div>
-                    <fieldset class="form-group">
-                      <div class="row">
-                        <legend class="col-form-label col-sm-4 pt-0">Radios</legend>
-                        <div class="col-sm-8">
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                            <label class="form-check-label" for="gridRadios1">
-                              First radio
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                              Second radio
-                            </label>
-                          </div>
-                          <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                            <label class="form-check-label" for="gridRadios3">
-                              Third disabled radio
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                    <div class="form-group row">
-                      <div class="col-sm-2">Checkbox</div>
-                      <div class="col-sm-10">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="gridCheck1">
-                          <label class="form-check-label" for="gridCheck1">
-                            Example checkbox
-                          </label>
-                        </div>
-                      </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
                     </div>
-                    <div class="form-group row">
-                      <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                      </div>
+                  </div>
+
+                  <!-- timing -->
+                  <div class="row">
+                    <!-- Departure -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">Departure</label>
                     </div>
-                  </form>
-                  </section>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="departure" style="height: 32px">
+                    </div>
+
+                    <!-- Arrival -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">arrival</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="arrival" style="height: 32px">
+                    </div>
+                  </div>
                 </div>
               </div>
+            </section>
 
-              <!--
-              t.string "board"
-              t.string "from_country"
-              t.string "from_city"
-              t.integer "seats"
-              t.integer "vacancies"
-              t.string "airline"
-              t.datetime "departure"
-              t.datetime "arrival"
-              t.boolean "transit", default: false, null: false
-              t.datetime "duration"
-              t.string "to_country"
-              t.string "to_city"
-              -->
-              <%= render 'form', flight: @flight %>
-              <%= link_to 'Back', flights_path %>
-            </div>
+            <section style="border-top: 1px solid #DFE1E6;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="color: #707070">Transit</label>
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="duration" style="height: 32px">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <section style="border-top: 1px solid #DFE1E6;">
+              <h6>Second Flight</h6>
+
+              <div class="container">
+                <!-- Airline -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="color: #707070">Airline</label>
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="" style="height: 32px">
+                  </div>
+                </div>
+
+                <!-- Country -->
+                <div class="row">
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">From</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">To</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <!-- City -->
+                  <div class="row">
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">From</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
+                    </div>
+
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">To</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
+                    </div>
+                  </div>
+
+                  <!-- timing -->
+                  <div class="row">
+                    <!-- Departure -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">Departure</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="departure" style="height: 32px">
+                    </div>
+
+                    <!-- Arrival -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">arrival</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="arrival" style="height: 32px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+
+            <!-- inboard flight --> <!-- inboard flight --> <!-- inboard flight --> <!-- inboard flight --> <!-- inboard flight --> <!-- inboard flight --> <!-- inboard flight -->
+
+            <section style="border-top: 1px solid #DFE1E6;">
+              <h5>Inboard Flight</h5>
+              <h6>First Flight</h6>
+
+              <div class="container">
+                <!-- Airline -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="color: #707070">Airline</label>
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="" style="height: 32px">
+                  </div>
+                </div>
+
+                <!-- Country -->
+                <div class="row">
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">From</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">To</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <!-- City -->
+                  <div class="row">
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">From</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
+                    </div>
+
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">To</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
+                    </div>
+                  </div>
+
+                  <!-- timing -->
+                  <div class="row">
+                    <!-- Departure -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">Departure</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="departure" style="height: 32px">
+                    </div>
+
+                    <!-- Arrival -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">arrival</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="arrival" style="height: 32px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section style="border-top: 1px solid #DFE1E6;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="color: #707070">Transit</label>
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="duration" style="height: 32px">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+            <section style="border-top: 1px solid #DFE1E6;">
+              <h6>Second Flight</h6>
+
+              <div class="container">
+                <!-- Airline -->
+                <div class="row">
+                  <div class="col-xs-4">
+                    <label class="col-form-label" style="color: #707070">Airline</label>
+                  </div>
+                  <div class="col-xs-6">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="" style="height: 32px">
+                  </div>
+                </div>
+
+                <!-- Country -->
+                <div class="row">
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">From</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <div class="col-xs-2">
+                    <label class="col-form-label" style="color: #707070">To</label>
+                  </div>
+                  <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="country" style="height: 32px">
+                  </div>
+
+                  <!-- City -->
+                  <div class="row">
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">From</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
+                    </div>
+
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">To</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="city" style="height: 32px">
+                    </div>
+                  </div>
+
+                  <!-- timing -->
+                  <div class="row">
+                    <!-- Departure -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">Departure</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="departure" style="height: 32px">
+                    </div>
+
+                    <!-- Arrival -->
+                    <div class="col-xs-2">
+                      <label class="col-form-label" style="color: #707070">arrival</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="arrival" style="height: 32px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
           </div>
         </div>
+
+        <%= render 'form', flight: @flight %>
+        <%= link_to 'Back', flights_path %>
       </div>
     </div>
 
@@ -188,6 +478,10 @@
   }
   #div{
     display:block !important;
+  }
+
+  input[type="text"], email {
+    background-color: #FAFBFC !important;
   }
 
   .a_hover:hover{
@@ -239,10 +533,13 @@
     pointer-events: none;
   }
   .red-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#f00; }
-
 </style>
 
 <script>
+    // To style only selects with the selectpicker class
+    $(document).ready(function(){
+        $('.selectpicker').selectpicker();
+    });
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
@@ -255,5 +552,5 @@
         // $('#the-tab li a').eq($(this).index()).tab('show');
     });
 */
-    $('select').selectpicker();
+
 </script>
