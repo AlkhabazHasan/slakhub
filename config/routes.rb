@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard/overview'
   get 'dashboard/destination'
   get 'dashboard/flights', to: 'flights#index'
-  get 'dashboard/traveler'
-  get 'dashboard/hotel'
+  get 'dashboard/travellers', to: 'travellers#index'
+  get 'dashboard/hotels', to: 'hotels#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

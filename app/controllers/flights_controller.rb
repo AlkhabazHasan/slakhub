@@ -19,24 +19,23 @@ class FlightsController < ApplicationController
 
   # GET /flights/1/edit
   def edit
+    @flight = Flight.find(params[:id])
   end
 
   # POST /flights
   # POST /flights.json
   def create
-    render plain: params[:flight].inspect
+    @flight = Flight.new(flight_params)
 
-    #@flight = Flight.new(flight_params)
-
-    #respond_to do |format|
-    #  if @flight.save
-    #    format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
-    #    format.json { render :show, status: :created, location: @flight }
-    #  else
-    #    format.html { render :new }
-    #    format.json { render json: @flight.errors, status: :unprocessable_entity }
-    #  end
-    #end
+    respond_to do |format|
+      if @flight.save
+        format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
+        format.json { render :show, status: :created, location: @flight }
+      else
+        format.html { render :new }
+        format.json { render json: @flight.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /flights/1
@@ -71,6 +70,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.fetch(:flight, {})
+      params.require(:flight).permit(:board, :from_country, :from_city, :seats, :vacancies, :airline, :departure, :arrivel, :transit, :duration, :to_country, :to_city, :destination_id, :tour_id, :round_id, :user_id, :workspace_id )
     end
 end

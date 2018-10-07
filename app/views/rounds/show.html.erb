@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @round.total %>
+</p>
+
+<ol>
+  <% for tour in @round.tours %>
+    <li><%= tour.country %></li><br />
+
+    <ul>
+      <% for destin in tour.destinations %>
+        <li><%= destin.country %></li>
+      <% end %>
+    </ul>
+
+  <% end %>
+</ol>
 
 <%= link_to 'Edit', edit_round_path(@round) %> |
 <%= link_to 'Back', rounds_path %>
+<p id="notice"><%= notice %></p>

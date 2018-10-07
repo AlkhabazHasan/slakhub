@@ -46,6 +46,12 @@ gem 'bootstrap-tooltip-rails'
 # rails jquery-rail
 gem 'jquery-rails'
 
+# jquery library
+gem 'rails-assets-coverflow', source: 'https://rails-assets.org'
+
+# Date - Time picker
+gem 'md-date-time-picker-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

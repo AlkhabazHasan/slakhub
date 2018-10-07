@@ -15,6 +15,7 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
+    10.times { @tour.destinations.build }
   end
 
   # GET /tours/1/edit
@@ -70,5 +71,6 @@ class ToursController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
       params.fetch(:tour, {})
+      params.require(:tour).permit(:country, :round_id, :user_id, :workspace_id, destinations_attributes: [:id, :country, :city, :round_id, :user_id, :workspace_id])
     end
 end

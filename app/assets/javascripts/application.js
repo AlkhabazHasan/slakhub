@@ -15,9 +15,10 @@
 //= require popper
 //= require bootstrap-sprockets
 
+//= require coverflow
 //= require jquery3
 //= require popper
-//= require bootstrap-sprockets
 
+//= require bootstrap-sprockets
 //= require bootstrap/alert
 //= require bootstrap/dropdown

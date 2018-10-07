@@ -1,5 +1,27 @@
 <h1>New Round</h1>
 
-<%= render 'form', round: @round %>
+<%= form_for @round do |f| %>
 
-<%= link_to 'Back', rounds_path %>
+  <%= f.label :total %>
+  <%= f.text_field :total %>
+
+  <div>
+    <%= f.label :workspace_id %>
+    <%= f.text_field :workspace_id %>
+  </div>
+  <div>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <%= f.fields_for :tours do |builder| %>
+    <%= render 'tour_fields', :f => builder %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

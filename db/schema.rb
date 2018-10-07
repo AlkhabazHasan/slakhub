@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_092205) do
+ActiveRecord::Schema.define(version: 2018_10_05_073009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,11 @@ ActiveRecord::Schema.define(version: 2018_09_24_092205) do
     t.string "meals"
     t.boolean "transportation", default: true, null: false
     t.bigint "tour_id"
-    t.bigint "round_id"
     t.bigint "user_id"
     t.bigint "workspace_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["round_id"], name: "index_destinations_on_round_id"
+    t.integer "round_id"
     t.index ["tour_id"], name: "index_destinations_on_tour_id"
     t.index ["user_id"], name: "index_destinations_on_user_id"
     t.index ["workspace_id"], name: "index_destinations_on_workspace_id"
@@ -87,8 +86,8 @@ ActiveRecord::Schema.define(version: 2018_09_24_092205) do
   create_table "hotels", force: :cascade do |t|
     t.string "name"
     t.string "country"
-    t.string "city"
-    t.text "address"
+    t.string "town"
+    t.text "building"
     t.string "phone"
     t.string "email"
     t.integer "floor"
@@ -97,6 +96,8 @@ ActiveRecord::Schema.define(version: 2018_09_24_092205) do
     t.bigint "workspace_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "street"
+    t.string "postal"
     t.index ["destination_id"], name: "index_hotels_on_destination_id"
     t.index ["user_id"], name: "index_hotels_on_user_id"
     t.index ["workspace_id"], name: "index_hotels_on_workspace_id"
@@ -171,13 +172,19 @@ ActiveRecord::Schema.define(version: 2018_09_24_092205) do
     t.string "phone"
     t.string "mobile"
     t.string "email"
-    t.text "address"
+    t.text "flat"
     t.datetime "last_trip"
     t.datetime "next_trip"
     t.bigint "workspace_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "building"
+    t.string "street"
+    t.string "postal"
+    t.string "town"
+    t.string "country"
     t.index ["user_id"], name: "index_travellers_on_user_id"
     t.index ["workspace_id"], name: "index_travellers_on_workspace_id"
   end

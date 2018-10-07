@@ -10,6 +10,7 @@ class TravellersController < ApplicationController
   # GET /travellers/1
   # GET /travellers/1.json
   def show
+    @traveller = Traveller.find(params[:id])
   end
 
   # GET /travellers/new
@@ -19,6 +20,7 @@ class TravellersController < ApplicationController
 
   # GET /travellers/1/edit
   def edit
+    @traveller = Traveller.find(params[:id])
   end
 
   # POST /travellers
@@ -54,11 +56,10 @@ class TravellersController < ApplicationController
   # DELETE /travellers/1
   # DELETE /travellers/1.json
   def destroy
+    @traveller = Traveller.find(params[:id])
     @traveller.destroy
-    respond_to do |format|
-      format.html { redirect_to travellers_url, notice: 'Traveller was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to travellers_path
   end
 
   private
@@ -68,7 +69,9 @@ class TravellersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def traveller_params
-      params.fetch(:traveller, {})
-    end
+
+  def traveller_params
+    params.require(:traveller).permit(:workspace_id, :user_id, :first_name, :last_name, :passport, :cpr, :phone, :mobile, :email, :flat, :building, :street, :postal, :town, :country, :last_trip, :next_trip)
+  end
+
 end

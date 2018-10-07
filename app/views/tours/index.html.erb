@@ -1,25 +1,168 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<head>
+  <title><%= @tours.name %></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
 
-<h1>Tours</h1>
+<body>
+<div style="width: 100%; display: table;">
+  <div style="display: table-row;">
+    <div style="display: table-cell; background-color: #0747a6; height: 100vh; position: absolute;">
+      <!-- A vertical navbar -->
+      <%= render 'navigation_bar', tour: @tour %>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <!-- main body -->
+    <div style="display: table-cell;">
+      <div style="margin: 0; padding: 0; margin-left: 9rem; margin-right: 5rem;">
 
-  <tbody>
-    <% @tours.each do |tour| %>
-      <tr>
-        <td><%= link_to 'Show', tour %></td>
-        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="container">
 
-<br>
+          <div class="row" style="margin-top: 2rem; margin-left: 1.5rem; margin-right: 4rem;">
+            <div class="col-xs-12">
+              <h4 style="font-size: 1.4em; font-weight: bold; color: #172B4D;">Tours</h4>
+            </div>
+          </div>
 
-<%= link_to 'New Tour', new_tour_path %>
+          <div class="card-columns" style="max-width: 960px; min-width: 300px!important; margin: auto">
+
+            <% @tours.each do |t| %>
+              <div class="card" style="position: unset; margin-bottom: 1.25rem; border-radius: .25rem; box-shadow: 0 1px 0 rgba(0,0,0,.25); background-color: #F9F9F9">
+                <div class="card-body">
+
+                  <div>
+                    <div>
+                      <h5 style="font-weight: bold; font-size: 20px; color: #2B3B5A">
+                        <svg aria-hidden="true" data-prefix="far" data-icon="hotel" class="svg-inline--fa fa-hotel fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="22" width="22" style="margin-top: -0.2rem; margin-right: 0.2rem"><path fill="currentColor" d="M560 48c8.84 0 16-7.16 16-16V16c0-8.84-7.16-16-16-16H16C7.16 0 0 7.16 0 16v16c0 8.84 7.16 16 16 16h15.98v416H16c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h544c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-16V48h16zm-64 416H320v-80h64c0-53.02-42.98-96-96-96s-96 42.98-96 96h64v80H79.98V48H496v416zM268.8 160h38.4c6.4 0 12.8-6.4 12.8-12.8v-38.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v38.4c0 6.4 6.4 12.8 12.8 12.8zm0 96h38.4c6.4 0 12.8-6.4 12.8-12.8v-38.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v38.4c0 6.4 6.4 12.8 12.8 12.8zm128 0h38.4c6.4 0 12.8-6.4 12.8-12.8v-38.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v38.4c0 6.4 6.4 12.8 12.8 12.8zm0-96h38.4c6.4 0 12.8-6.4 12.8-12.8v-38.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v38.4c0 6.4 6.4 12.8 12.8 12.8zm-256 96h38.4c6.4 0 12.8-6.4 12.8-12.8v-38.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v38.4c0 6.4 6.4 12.8 12.8 12.8zm0-96h38.4c6.4 0 12.8-6.4 12.8-12.8v-38.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v38.4c0 6.4 6.4 12.8 12.8 12.8z"></path></svg>
+                        <%= t.country %>
+                        <%= link_to edit_tour_path(t), :class => "card-link" do %>
+                          <svg aria-hidden="true" data-prefix="far" data-icon="marker" class="svg-inline--fa fa-marker fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="16" width="16" style="margin-top: -0.2rem; margin-left: 0.5rem"><path fill="#FF9000" d="M485.48 26.51C467.81 8.84 444.64 0 421.47 0s-46.33 8.84-64.01 26.51L335.7 48.27l-36.55-36.55c-15.62-15.62-40.95-15.62-56.56 0L123.8 130.5c-6.25 6.25-6.25 16.38 0 22.63l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0L270.87 51.31l30.9 30.9L93.95 290.02A327.038 327.038 0 0 0 .17 485.11l-.03.23C-1.45 499.72 9.88 512 23.95 512c5.73 0 111.06-6.99 198.03-93.95l263.51-263.51c35.35-35.36 35.35-92.67-.01-128.03zm-297.45 357.6c-37.02 37.02-83.99 62.88-134.74 74.6 11.72-50.74 37.59-97.73 74.6-134.74l73.07-73.07 60.14 60.14-73.07 73.07zm263.52-263.52L295.04 277.1l-60.14-60.14 156.51-156.5C399.44 52.42 410.12 48 421.47 48c11.36 0 22.04 4.42 30.07 12.46C459.58 68.49 464 79.17 464 90.52c0 11.36-4.42 22.04-12.45 30.07z"></path></svg>
+                        <% end %>
+
+                        <!-- destroy traveller -->
+                        <%= link_to tour_path(t), :class => "card-link", method: :delete do%>
+                          <svg aria-hidden="true" data-prefix="far" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16" style="margin-top: -0.2rem; margin-left: -1rem"><path fill="#FF9000" d="M192 188v216c0 6.627-5.373 12-12 12h-24c-6.627 0-12-5.373-12-12V188c0-6.627 5.373-12 12-12h24c6.627 0 12 5.373 12 12zm100-12h-24c-6.627 0-12 5.373-12 12v216c0 6.627 5.373 12 12 12h24c6.627 0 12-5.373 12-12V188c0-6.627-5.373-12-12-12zm132-96c13.255 0 24 10.745 24 24v12c0 6.627-5.373 12-12 12h-20v336c0 26.51-21.49 48-48 48H80c-26.51 0-48-21.49-48-48V128H12c-6.627 0-12-5.373-12-12v-12c0-13.255 10.745-24 24-24h74.411l34.018-56.696A48 48 0 0 1 173.589 0h100.823a48 48 0 0 1 41.16 23.304L349.589 80H424zm-269.611 0h139.223L276.16 50.913A6 6 0 0 0 271.015 48h-94.028a6 6 0 0 0-5.145 2.913L154.389 80zM368 128H80v330a6 6 0 0 0 6 6h276a6 6 0 0 0 6-6V128z"></path></svg>
+                        <% end %>
+                      </h5>
+                    </div>
+                  </div>
+
+                  <% for destin in t.destinations %>
+                  <p class="card-text">
+                  <span style="font-size: 14px; font-weight: bold; color: #172B4D">
+                    <svg aria-hidden="true" data-prefix="fal" data-icon="badge-check" class="svg-inline--fa fa-badge-check fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="16" width="16" style="margin-top: -0.2rem"><path fill="#D62C3F" d="M345.34 182.46a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34L226.54 289.94l-48.57-48.57a7.98 7.98 0 0 0-5.66-2.34c-2.05 0-4.1.78-5.66 2.34l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31l65.54 65.54c1.56 1.56 3.61 2.34 5.66 2.34s4.09-.78 5.65-2.34l124.45-124.45c3.12-3.12 3.12-8.19 0-11.31l-11.3-11.31zM512 256c0-35.5-19.4-68.2-49.6-85.5 9.1-33.6-.3-70.4-25.4-95.5s-61.9-34.5-95.5-25.4C324.2 19.4 291.5 0 256 0s-68.2 19.4-85.5 49.6c-33.6-9.1-70.4.3-95.5 25.4s-34.5 61.9-25.4 95.5C19.4 187.8 0 220.5 0 256s19.4 68.2 49.6 85.5c-9.1 33.6.3 70.4 25.4 95.5 26.5 26.5 63.4 34.1 95.5 25.4 17.4 30.2 50 49.6 85.5 49.6s68.1-19.4 85.5-49.6c32.7 8.9 69.4.7 95.5-25.4 25.1-25.1 34.5-61.9 25.4-95.5 30.2-17.3 49.6-50 49.6-85.5zm-91.1 68.3c5.3 11.8 29.5 54.1-6.5 90.1-28.9 28.9-57.5 21.3-90.1 6.5C319.7 433 307 480 256 480c-52.1 0-64.7-49.5-68.3-59.1-32.6 14.8-61.3 22.2-90.1-6.5-36.8-36.7-10.9-80.5-6.5-90.1C79 319.7 32 307 32 256c0-52.1 49.5-64.7 59.1-68.3-5.3-11.8-29.5-54.1 6.5-90.1 36.8-36.9 80.8-10.7 90.1-6.5C192.3 79 205 32 256 32c52.1 0 64.7 49.5 68.3 59.1 11.8-5.3 54.1-29.5 90.1 6.5 36.8 36.7 10.9 80.5 6.5 90.1C433 192.3 480 205 480 256c0 52.1-49.5 64.7-59.1 68.3z"></path></svg>
+                    City:</span>
+                    <span style="font-size: 14px; color: #172B4D">
+                    <%= destin.city %><br>
+                  </span>
+
+                    <span style="font-size: 14px; font-weight: bold; color: #172B4D">
+                    <svg aria-hidden="true" data-prefix="fal" data-icon="mobile" class="svg-inline--fa fa-mobile fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" height="15" width="15" style="margin-top: -0.2rem"><path fill="#D62C3F" d="M192 416c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32zM320 48v416c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h224c26.5 0 48 21.5 48 48zm-32 0c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v416c0 8.8 7.2 16 16 16h224c8.8 0 16-7.2 16-16V48z"></path></svg>
+                    Duration:</span>
+                    <span style="font-size: 14px; color: #172B4D">
+                    <%= destin.duration %><br>
+                  </span>
+
+                    <span style="font-size: 14px; font-weight: bold; color: #172B4D">
+                    <svg aria-hidden="true" data-prefix="fal" data-icon="at" class="svg-inline--fa fa-at fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="15" width="15" style="margin-top: -0.2rem"><path fill="#D62C3F" d="M256 8C118.941 8 8 118.919 8 256c0 137.058 110.919 248 248 248 52.925 0 104.68-17.078 147.092-48.319 5.501-4.052 6.423-11.924 2.095-17.211l-5.074-6.198c-4.018-4.909-11.193-5.883-16.307-2.129C346.93 457.208 301.974 472 256 472c-119.373 0-216-96.607-216-216 0-119.375 96.607-216 216-216 118.445 0 216 80.024 216 200 0 72.873-52.819 108.241-116.065 108.241-19.734 0-23.695-10.816-19.503-33.868l32.07-164.071c1.449-7.411-4.226-14.302-11.777-14.302h-12.421a12 12 0 0 0-11.781 9.718c-2.294 11.846-2.86 13.464-3.861 25.647-11.729-27.078-38.639-43.023-73.375-43.023-68.044 0-133.176 62.95-133.176 157.027 0 61.587 33.915 98.354 90.723 98.354 39.729 0 70.601-24.278 86.633-46.982-1.211 27.786 17.455 42.213 45.975 42.213C453.089 378.954 504 321.729 504 240 504 103.814 393.863 8 256 8zm-37.92 342.627c-36.681 0-58.58-25.108-58.58-67.166 0-74.69 50.765-121.545 97.217-121.545 38.857 0 58.102 27.79 58.102 65.735 0 58.133-38.369 122.976-96.739 122.976z"></path></svg>
+                    Meals:</span>
+                    <span style="font-size: 14px; color: #172B4D">
+                    <%= destin.meals %><br>
+                  </span>
+
+                  </p>
+                  <% end %>
+                  <%= link_to 'More', t, :class => "card-link", :style => "font-weight: bold; font-style: italic; font-size: 14px" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</body>
+</html>
+
+<style>
+  .body{
+    color: #172B4D;
+    font-family: 'Lato', sans-serif;
+  }
+
+  #div{
+    display:block !important;
+  }
+
+  .btn_color{
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+    border: 1px solid #2D9EDF;
+    line-height: 1.6em;
+  }
+  .btn_color:hover{
+    background: #2D9EDF !important;
+    color: #FFF;
+  }
+
+  .a_hover:hover{
+    height: 40px;
+    width: 50px;
+    outline: none;
+    border-radius: 2px;
+    text-decoration: none;
+    background-color: #3E313C !important;
+    padding: 10px 16px 13px 16px;
+
+    margin-right: 9px;
+    margin-left: 6px;
+
+    vertical-align: middle;
+  }
+
+  .a_hover:active{
+    height: 40px;
+    width: 50px;
+    outline: none;
+    border-radius: 2px;
+    text-decoration: none;
+
+    margin-right: 9px;
+    margin-left: 6px;
+    vertical-align: middle;
+    padding: 10px 16px 13px 16px;
+
+    background-color: #4C9689 !important;
+  }
+
+  .a_hover:focus{
+    height: 40px;
+    width: 50px;
+    outline: none;
+    border-radius: 2px;
+    text-decoration: none;
+
+    margin-right: 9px;
+    margin-left: 6px;
+    vertical-align: middle;
+    padding: 10px 16px 13px 16px;
+
+    background-color: #3E313C !important;
+  }
+
+  .tooltip{
+    pointer-events: none;
+  }
+  .red-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#f00; }
+
+</style>
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

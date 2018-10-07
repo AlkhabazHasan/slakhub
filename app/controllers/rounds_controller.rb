@@ -4,17 +4,22 @@ class RoundsController < ApplicationController
   # GET /rounds
   # GET /rounds.json
   def index
-    @rounds = Round.all
+    @round = Round.all
   end
 
   # GET /rounds/1
   # GET /rounds/1.json
   def show
+    @round = Round.find(params[:id])
   end
 
   # GET /rounds/new
   def new
     @round = Round.new
+    1.times do
+      tour = @round.tours.build
+      1.times { tour.destinations.build }
+    end
   end
 
   # GET /rounds/1/edit
@@ -70,5 +75,6 @@ class RoundsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def round_params
       params.fetch(:round, {})
+      params.require(:round).permit(:total, :price, :workspace_id, :user_id, tours_attributes: [:id, :country, :visa, :round_id, :user_id, :workspace_id, :_destroy], destinations_attributes: [:id, :country, :tour_id, :user_id, :workspace_id, :_destroy])
     end
 end
